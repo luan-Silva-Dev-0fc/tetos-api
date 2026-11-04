@@ -148,10 +148,10 @@ async function login(req, res) {
             })
         }
 
-        const token = jwt.sign(
-            { id: usuario.id, email: usuario.email, n_veis_id: usuario.n_veis_id },
+        let token = jwt.sign(
+            { id: usuario.id },
             process.env.JWT_SECRET,
-            { expiresIn: "1d" }
+            { expiresIn: "1h" }
         );
 
         res.json({
