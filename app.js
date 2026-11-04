@@ -3,6 +3,7 @@ const cors = require("cors");
 const niveisRoutes = require("./src/routes/niveisRoutes");
 const imoveisTipoRoutes = require("./src/routes/imoveisTipoRoutes");
 const usuariosRoutes = require("./src/routes/usuariosRoutes");
+const { login } = require("./src/controllers/usuariosController");
 
 const app = express();
 
@@ -13,9 +14,22 @@ app.get("/", (req, res) => {
     res.send("Olá mundo");
 });
 
+app.post("/login", login);
+
 app.use("/niveis", niveisRoutes);
 app.use("/imoveis-tipo", imoveisTipoRoutes);
 app.use("/usuarios", usuariosRoutes);
+
+//captura JSON inválido enviado no corpo da requisição
+app.use((err, req, res, next) => {
+    if (err.type === "entity.parse.failed") {
+        return res.status(400).json({
+            type: "error",
+            description: "JSON inválido no corpo da requisição: " + err.message
+        });
+    }
+    next(err);
+});
 
 app.listen(3000, () => {
     console.log("Servidor on: http://localhost:3000");

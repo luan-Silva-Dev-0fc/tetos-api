@@ -8,16 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GT04-aldeota/tetos-api.git"
+    "url": "git+https://github.com/luan-Silva-Dev-0fc/tetos-api.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/GT04-aldeota/tetos-api/issues"
+    "url": "https://github.com/luan-Silva-Dev-0fc/tetos-api/issues"
   },
-  "homepage": "https://github.com/GT04-aldeota/tetos-api#readme",
+  "homepage": "https://github.com/luan-Silva-Dev-0fc/tetos-api#readme",
   "dependencies": {
     "@prisma/client": "^6.19.3",
     "bcrypt": "^6.0.0",
