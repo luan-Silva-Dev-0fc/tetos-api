@@ -2,7 +2,7 @@ const { buscar, criar, editar, deletar, login } = require("../controllers/usuari
 const { usuarioAutenticado } = require("../middlewares/usuarioMiddlewares");
 const rotas = require("express").Router();
 
-rotas.get("/", usuarioAutenticado, buscar);
+rotas.get("/", buscar);
 rotas.post("/", criar);
 rotas.post("/login", login);
 rotas.put("/:id", editar);
